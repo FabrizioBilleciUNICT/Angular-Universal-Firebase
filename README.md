@@ -1,9 +1,15 @@
 # Angular-Universal-Firebase
-A newest guide to explain how to do a Server-Side-Render SPA with Angular and Firebase overcoming some problems when build and deploy.
+A newest guide to explain how to do a Server-Side-Render SPA with Angular and Firebase overcoming some problems during building and deployment.
 
 ### Original guide(s)
 * <a href="https://github.com/hiepxanh/angularfire2/blob/a45e0ad4f1c918e78a1610d2b73dee3cc9b1f6b1/docs/universal/getting-started.md">Getting started with AngularFire and Universal</a>
 * <a href="https://github.com/hiepxanh/angularfire2/blob/a45e0ad4f1c918e78a1610d2b73dee3cc9b1f6b1/docs/universal/cloud-functions.md">Deploying your Universal application on Cloud Functions for Firebase</a>
+
+
+## DISCLAMER
+This is not meant to be a copy of a guide, but it would like to face some problems found in my personal experience (which cost me several sleepless nights). 
+----------------------------------------------------------------------------------------------------------------------------
+
 
 #### Version health check
 - Angular CLI: 9.0.7
@@ -13,6 +19,7 @@ A newest guide to explain how to do a Server-Side-Render SPA with Angular and Fi
 Check your angular-cli version before start. <br>
 <br>
 NOTE: project's name is <b>web</b> and it is referred by multiple files figured in this guide.
+<br>
 
 ### 1. Generate workspace and application
 ```
