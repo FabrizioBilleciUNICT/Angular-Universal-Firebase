@@ -47,4 +47,8 @@ Thumbs.db
 
 
 .firebaserc
-
+.firebase
+public/browser/*
+public/server/*
+.editorconfig
+package-lock.json

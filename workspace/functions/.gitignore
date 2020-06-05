@@ -9,3 +9,4 @@ node_modules/
 
 dist/web/browser/*
 dist/web/server/*
+package-lock.json
