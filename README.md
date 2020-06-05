@@ -36,7 +36,7 @@ If CLI shows you this message: ```We detected an Angular Universal project. Do y
 Function?``` select <b>NO</b> (we'll do this later).
 
 ### 2. Edit server.ts (root workspace dir) 
-```
+```ts
 ...
 // Insert polyfills at the top of file, required for Firebase
 (global as any).WebSocket = require('ws');
@@ -45,7 +45,7 @@ Function?``` select <b>NO</b> (we'll do this later).
 
 ```
 ### 3. Setup Firebase env.
-- follow this guilde https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md
+- Follow this guilde https://github.com/angular/angularfire/blob/master/docs/install-and-setup.md
 
 ### 4. Local running
 `npm run dev:ssr`
@@ -59,7 +59,7 @@ Select at least `functions` and `hosting`. Typescript for Cloud Functions and th
 
 ### 6. Edit files 
 ###### firebase.json (root workspace dir)
-```js
+```yaml
 {
   "hosting": {
     "public": "public",
@@ -85,7 +85,7 @@ Select at least `functions` and `hosting`. Typescript for Cloud Functions and th
 }
 ```
 ###### package.json (root workspace dir)
-```js
+```yaml
 "scripts": {
   // ...  
   "build": "ng build && npm run copy:hosting && npm run build:ssr && npm run build:functions",
@@ -96,7 +96,7 @@ Select at least `functions` and `hosting`. Typescript for Cloud Functions and th
 With the flag <b>f</b> (-rf) we can avoid errors if files don't exist.
 
 ###### functions/package.json 
-```js
+```yaml
   // ...
   "scripts": {
     // ...
@@ -108,7 +108,7 @@ With the flag <b>f</b> (-rf) we can avoid errors if files don't exist.
   // ...
 ```
 Again, flag -f missing in the original guide.<br>
-Node env. v10 as requests by Firebase Cloud Function.
+Node env. v10 as request by Firebase Cloud Function.
 
 ###### functions/src/index.ts
 ```ts
@@ -119,7 +119,7 @@ export const universal = functions.https.onRequest(serv());
 In the original guide, the require(`${process.cwd()}/dist/web/server`) causes:
 > Error: Cannot find module '/PATH_TO_WS/workspace/functions/dist/web/server'
 
-Also, thanks to Luciano answer: https://stackoverflow.com/questions/61352383/timeout-when-routing-angular-9-universal-firebase/ for this script's structure: it resolves timeout problems encountered following the original guide's script. 
+Also, thanks to Luciano's answer: https://stackoverflow.com/questions/61352383/timeout-when-routing-angular-9-universal-firebase/ for this script's structure: it resolves timeout problems encountered following the original guide's script. 
 
 ### 7. Time to build (and deploy)
 Now everything seems ready to build by the command ```npm run build```. Personally I stumbled in multiple errors (4):
